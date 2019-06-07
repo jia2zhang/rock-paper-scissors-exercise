@@ -50,7 +50,7 @@ separators()
 # else:
 #     print("blahhhhh")
 
-#Alternative way to code game result
+#Alternative 2 to code game result
 winner = {
     "rock": {
         "rock": None,
@@ -79,6 +79,28 @@ if winning_choice:
 else:
     print("It's a tie!")
 
+#Alternative 3 to code game result
+
+# if my_input == computer_choice:
+#     winning_choice = None
+# else:
+#     choices = [my_input, computer_choice]
+#     choices.sort() #FYI, this is mutating
+
+#     if choices == ["paper","rock"]:
+#         winning_choice = "paper"
+#     elif choices == ["paper","scissors"]:
+#         winning_choice = "scissors"
+#     elif choices == ["rock", "scissors"]:
+#         winning_choice = "rock"
+# if winning_choice:
+#     if winning_choice == my_input:
+#         print("Good Job! You Won!")
+#     elif winning_choice == computer_choice:
+#         print("Oh, the computer won. It's okay")
+# else:
+#     print("It's a tie!")    
+    
 #Thank you message
 separators()
 thankyou_message()
