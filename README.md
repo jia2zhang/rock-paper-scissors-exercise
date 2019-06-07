@@ -1,3 +1,18 @@
 # rock-paper-scissors-exercise
 
-##Setup the repo
+
+A game of rock paper scissors
+
+
+## Setup
+
+TODO - describe setup steps using code blocks
+
+## Usage
+
+Run the game:
+
+```sh
+python game.py
+```
+
