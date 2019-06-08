@@ -75,25 +75,7 @@ if __name__ == "__main__":
     #     print("blahhhhh")
 
     #Alternative 2 to code game result
-    winner = {
-        "rock": {
-            "rock": None,
-            "paper": "paper",
-            "scissors": "rock",
-        },
-        "paper": {
-            "rock": "paper",
-            "paper": None,
-            "scissors": "scissors",
-        },
-        "scissors": {
-            "rock": "rock",
-            "paper": "scissors",
-            "scissors": None,
-        },
-    }
-
-    winning_choice = winner[my_input][computer_choice]
+    winning_choice = determine_winner(my_input,computer_choice)
 
     if winning_choice:
         if winning_choice == my_input:
