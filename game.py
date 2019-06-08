@@ -1,107 +1,131 @@
 # game.py
 import random
 
+#Define the determine_winner function used in game_test.py
+def determine_winner(u, c):
+    winner = {
+        "rock": {
+            "rock": None,
+            "paper": "paper",
+            "scissors": "rock",
+        },
+        "paper": {
+            "rock": "paper",
+            "paper": None,
+            "scissors": "scissors",
+        },
+        "scissors": {
+            "rock": "rock",
+            "paper": "scissors",
+            "scissors": None,
+        },
+    }
+    winning_choice = winner[u][c]
+    return winning_choice
 
-##Define functions
-print("Rock, Paper, Scissors, Shoot!")
+#Only if this script is executed from the command-line, so this line of code takes the script out of the global scope
+if __name__ == "__main__":
 
-def separators():
-    print("-------------------")
+    ##Define functions
+    print("Rock, Paper, Scissors, Shoot!")
 
-def welcome_message():
-    print("Welcome to Jessica's Rock-Paper-Scissors game...")
+    def separators():
+        print("-------------------")
 
-def thankyou_message():
-    print("Thanks for playing. Please play again!")
+    def welcome_message():
+        print("Welcome to Jessica's Rock-Paper-Scissors game...")
 
-##Game Output
-separators()
-welcome_message()
-separators()
-#Let's play and also validate inputs
-my_input = input("Please choose either 'rock', 'paper', or 'scissors': ")
-my_choices = ['rock', 'paper', 'scissors']
+    def thankyou_message():
+        print("Thanks for playing. Please play again!")
 
-if my_input not in my_choices:
-    print("INVALID SELECTION, PLEASE TRY AGAIN...")
-    exit()
+    ##Game Output
+    separators()
+    welcome_message()
+    separators()
+    #Let's play and also validate inputs
+    my_input = input("Please choose either 'rock', 'paper', or 'scissors': ")
+    my_choices = ['rock', 'paper', 'scissors']
 
-print("You chose: '"+ my_input+"'")
-computer_choice = random.choice(my_choices)
-print("The computer chose: '"+computer_choice+"'")
+    if my_input not in my_choices:
+        print("INVALID SELECTION, PLEASE TRY AGAIN...")
+        exit()
 
-separators()
+    print("You chose: '"+ my_input+"'")
+    computer_choice = random.choice(my_choices)
+    print("The computer chose: '"+computer_choice+"'")
 
-#Display game result
-# if my_input == computer_choice:
-#     print("It's a tie!")
-# elif my_input=="rock" and computer_choice=="paper":
-#     print("Oh, the computer won. It's okay")
-# elif my_input=="rock" and computer_choice=="scissors":
-#     print("Good Job! You won!")
-# elif my_input=="paper" and computer_choice=="rock":
-#     print("Good Job! You won!")
-# elif my_input=="paper" and computer_choice=="scissors":
-#     print("Oh, the computer won. It's okay")
-# elif my_input=="scissors" and computer_choice=="rock":
-#     print("Oh, the computer won. It's okay")
-# elif my_input=="scissors" and computer_choice=="paper":
-#     print("Good Job! You won!")
-# else:
-#     print("blahhhhh")
+    separators()
 
-#Alternative 2 to code game result
-winner = {
-    "rock": {
-        "rock": None,
-        "paper": "paper",
-        "scissors": "rock",
-    },
-    "paper": {
-        "rock": "paper",
-        "paper": None,
-        "scissors": "scissors",
-    },
-    "scissors": {
-        "rock": "rock",
-        "paper": "scissors",
-        "scissors": None,
-    },
-}
+    #Display game result
+    # if my_input == computer_choice:
+    #     print("It's a tie!")
+    # elif my_input=="rock" and computer_choice=="paper":
+    #     print("Oh, the computer won. It's okay")
+    # elif my_input=="rock" and computer_choice=="scissors":
+    #     print("Good Job! You won!")
+    # elif my_input=="paper" and computer_choice=="rock":
+    #     print("Good Job! You won!")
+    # elif my_input=="paper" and computer_choice=="scissors":
+    #     print("Oh, the computer won. It's okay")
+    # elif my_input=="scissors" and computer_choice=="rock":
+    #     print("Oh, the computer won. It's okay")
+    # elif my_input=="scissors" and computer_choice=="paper":
+    #     print("Good Job! You won!")
+    # else:
+    #     print("blahhhhh")
 
-winning_choice = winner[my_input][computer_choice]
+    #Alternative 2 to code game result
+    winner = {
+        "rock": {
+            "rock": None,
+            "paper": "paper",
+            "scissors": "rock",
+        },
+        "paper": {
+            "rock": "paper",
+            "paper": None,
+            "scissors": "scissors",
+        },
+        "scissors": {
+            "rock": "rock",
+            "paper": "scissors",
+            "scissors": None,
+        },
+    }
 
-if winning_choice:
-    if winning_choice == my_input:
-        print("Good Job! You won!")
-    if winning_choice == computer_choice:
-        print("Oh, the computer won. It's okay")
-else:
-    print("It's a tie!")
+    winning_choice = winner[my_input][computer_choice]
 
-#Alternative 3 to code game result
+    if winning_choice:
+        if winning_choice == my_input:
+            print("Good Job! You won!")
+        if winning_choice == computer_choice:
+            print("Oh, the computer won. It's okay")
+    else:
+        print("It's a tie!")
 
-# if my_input == computer_choice:
-#     winning_choice = None
-# else:
-#     choices = [my_input, computer_choice]
-#     choices.sort() #FYI, this is mutating
+    #Alternative 3 to code game result
 
-#     if choices == ["paper","rock"]:
-#         winning_choice = "paper"
-#     elif choices == ["paper","scissors"]:
-#         winning_choice = "scissors"
-#     elif choices == ["rock", "scissors"]:
-#         winning_choice = "rock"
-# if winning_choice:
-#     if winning_choice == my_input:
-#         print("Good Job! You Won!")
-#     elif winning_choice == computer_choice:
-#         print("Oh, the computer won. It's okay")
-# else:
-#     print("It's a tie!")    
-    
-#Thank you message
-separators()
-thankyou_message()
+    # if my_input == computer_choice:
+    #     winning_choice = None
+    # else:
+    #     choices = [my_input, computer_choice]
+    #     choices.sort() #FYI, this is mutating
+
+    #     if choices == ["paper","rock"]:
+    #         winning_choice = "paper"
+    #     elif choices == ["paper","scissors"]:
+    #         winning_choice = "scissors"
+    #     elif choices == ["rock", "scissors"]:
+    #         winning_choice = "rock"
+    # if winning_choice:
+    #     if winning_choice == my_input:
+    #         print("Good Job! You Won!")
+    #     elif winning_choice == computer_choice:
+    #         print("Oh, the computer won. It's okay")
+    # else:
+    #     print("It's a tie!")    
+        
+    #Thank you message
+    separators()
+    thankyou_message()
 
